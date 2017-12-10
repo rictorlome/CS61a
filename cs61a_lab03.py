@@ -1,3 +1,6 @@
+##CS61a 2016 - Lab 3
+##https://inst.eecs.berkeley.edu/~cs61a/fa16/lab/lab03
+
 def hailstone(n):
     """Print out the hailstone sequence starting at n, and return the
     number of elements in the sequence.
@@ -44,3 +47,32 @@ def ab_plus_c(a, b, c):
         return a + c
     else:
         return ab_plus_c(a-1, b, c) + b
+
+def is_palindrome(n):
+    """
+    Fill in the blanks '_____' to check if a number
+    is a palindrome.
+
+    >>> is_palindrome(12321)
+    True
+    >>> is_palindrome(42)
+    False
+    >>> is_palindrome(2015)
+    False
+    >>> is_palindrome(55)
+    True
+    """
+    """
+    For reference:
+
+        x, y = n, 0
+    f = lambda: _____
+    while x > 0:
+        x, y = _____, f()
+    return y == n
+    """
+    x, y = n, 0
+    f = lambda: 10 * y + x % 10
+    while x > 0:
+        x, y = x//10, f()
+    return y == n
